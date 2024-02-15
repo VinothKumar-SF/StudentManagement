@@ -1,0 +1,57 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+         <!-- modal header start -->
+           <header class="slds-modal__header">
+              <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+                 <lightning-icon icon-name="utility:close"
+                    alternative-text="close"
+                    variant="inverse"
+                    size="small" ></lightning-icon>
+                 <span class="slds-assistive-text">Close</span>
+              </button>
+              <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Applicant Information</h2>
+           </header>
+       
+           <!-- modal body start -->
+           <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <lightning-input type="text" name="Applicant_First_Name__c" label="First Name"></lightning-input>
+            <lightning-input type="text" name="Applicant_Last_Name__c" label="Last Name"></lightning-input>
+            <lightning-input type="number" name="Applicant_Phone__c" label="Phone" ></lightning-input>  
+            <lightning-input type="number" name="Applicant_Age__c" label="Age" ></lightning-input>
+            <lightning-combobox type="text" name="Applicant_Qualification__c" label="Qualification"></lightning-combobox> 
+            <lightning-textarea type="text" name="Applicant_Address__c" label="Address"></lightning-textarea> 
+            <lightning-input type="date" name="Applicant_DOB__c" label="Age" ></lightning-input>
+            <lightning-input type="email" name="Applicant_Email__c" label="Email" ></lightning-input>
+               <h2>Gender</h2>
+            <div class="slds-float_left">
+            <lightning-radio-group name="radioGroup" options={options} value={value} type="radio" class="customRadioCls"> </lightning-radio-group>
+            </div>
+            <div class="slds-float_left">
+            <lightning-radio-group name="radioGroup" options={options1} value={value} type="radio" class="customRadioCls"> </lightning-radio-group>
+            </div>
+            <div class="slds-float_left">
+            <lightning-radio-group name="radioGroup" options={options2} value={value} type="radio" class="customRadioCls"> </lightning-radio-group>
+                  </div>
+               
+            <lightning-input type="date" name="Date__c" label="Date" ></lightning-input>
+
+         
+         <h2>Applicant Desired Program</h2>
+         <lightning-combobox type="text" name="Applicant_Desired_Program__c" value={value} options={option} onchange={degree}></lightning-combobox> 
+            
+         
+         
+         </div>
+ 
+           <!-- modal footer start-->
+           <footer class="slds-modal__footer">
+              <lightning-button variant="Neutral" label="Cancel" onclick={hideModalBox} class="slds-m-left_large">Cancel</lightning-button>
+              <lightning-button variant="Brand" label="Save" onclick={hideModalBox} class="slds-m-left_large">Save</lightning-button>
+           </footer>
+        
+        </div>
+     </section>
+       
+    </template>
